@@ -1,0 +1,14 @@
+.wrap{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.item{
+    border: solid black 1px;
+    text-align: center;
+}
+.itemPic img{
+    height: 15rem;
+    width: 15rem;
+    object-fit: cover;
+    border: 1px solid grey;
+}
