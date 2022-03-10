@@ -1,12 +1,29 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}{{ parent() }} : Acceuil{% endblock %}
-
+{% block title %}
+	{{ parent() }}
+	: Acceuil
+{% endblock %}
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/styleHomepage.css') }}">
+{% endblock %}
 {% block body %}
 
-<div class="wrap">
+	<div class="wrap">
 
+		<h1>Bienvenue sur la page d'acceuil</h1>
 
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto quidem error hic sed magnam voluptates. Quam, incidunt quia ab expedita excepturi sint repudiandae unde qui possimus mollitia, consequuntur totam. Repudiandae minus a magni quibusdam quod ipsam dicta maiores dolore, consequuntur, ut quaerat commodi eos vero adipisci deleniti vitae?
+		</p>
 
-</div>
+		<div class="showcase d-flex">
+            <div class="item">
+                <h3>Nom d'item</h3>
+                <div class="itemPic">
+                    <img src="{{ asset('images/chair.png') }}" alt="">
+                </div>
+            </div>
+        </div>
+
+	</div>
 {% endblock %}
