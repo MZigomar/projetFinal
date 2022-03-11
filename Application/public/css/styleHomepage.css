@@ -1,10 +1,10 @@
-.wrap{
+.wrap {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: rgb(240, 240, 240);
     text-align: center;
 }
 
-.showcase{
+.showcase {
     width: 80%;
     margin: 4rem auto 0 auto;
     padding: 4rem 0;
@@ -12,21 +12,29 @@
     flex-wrap: wrap;
     justify-content: space-around;
 }
-.item{
+
+.item {
     border: solid black 1px;
     text-align: center;
-    max-width: 25%;
+    max-width: 80%;
     margin: 1rem 0;
     padding: 1rem;
 }
-.itemPic img{
+
+.itemPic img {
     max-height: 15rem;
     width: 90%;
     object-fit: cover;
     border: 1px solid grey;
 }
 
-h1{
+h1 {
     margin-top: 0;
     padding: 1rem;
+}
+
+@media (min-width: 768px) {
+    .item {
+        max-width: 25%;
+    }
 }
