@@ -8,20 +8,52 @@
 {% endblock %}
 
 {% block body %}
-	<h1 id="register">Inscription</h1>
 
-	{{ form_start(registrationForm) }}
-	<div class="name">{{ form_row(registrationForm.firstname) }}
-		{{ form_row(registrationForm.lastname) }}
+	<div class="container">
+		<h1 id="register">Inscription</h1>
+		<div class="tab-body">
+
+			{{ form_start(registrationForm) }}
+			<div class="row">
+				<label for="Prenom">Prenom</label>
+				{{ form_row(registrationForm.firstname) }}
+
+			</div>
+			<div class="row">
+				<label for="Nom">Nom</label>
+				{{ form_row(registrationForm.lastname) }}
+			</div>
+
+			<div class="row">
+				<label for="email">Email</label>
+				{{ form_row(registrationForm.email) }}
+			</div>
+			<div class="row">
+				<label for="Mot de passe">Mot de passe</label>
+				{{ form_row(registrationForm.plainPassword.first, {
+            label: 'Password'
+        }) }}
+			</div>
+			<div class="row">
+				<label for="">Confirmer Mot de passe</label>
+				{{ form_row(registrationForm.plainPassword.second, {
+            label: 'Password'
+        }) }}
+
+
+			</div>
+			<div class="row">
+				<label for="J'accepte les termes">J'accepte les termes</label>
+				{{ form_row(registrationForm.agreeTerms) }}
+			</div>
+
+			<div class="bouton">
+				<button type="submit" class="btn">S'inscrire</button>
+				{{ form_end(registrationForm) }}
+			</div>
+
+		</div>
 	</div>
 
-	{{ form_row(registrationForm.email) }}
-    <div class="password">{{ form_row(registrationForm.plainPassword, {
-            label: 'Password'
-        }) }}</div>
-	
-	{{ form_row(registrationForm.agreeTerms) }}
 
-	<button type="submit" class="btn">S'inscrire</button>
-	{{ form_end(registrationForm) }}
 {% endblock %}
