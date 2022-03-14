@@ -1,27 +1,48 @@
+<link rel="stylesheet" href={{ asset ('css/styleHeader.css')}} />
+
 <header>
 	<nav>
-		<ul>
-			<li>
-				<a class="" href="{{ path('acceuil_index') }}">
-					Accueil
-				</a>
+		<div>
+			<ul>
+				<li><ahref="{{ path('acceuil_index') }}"><img class="img"src="{{ asset('images/logo.jpg')}}" alt="logo"></a></li>
+			</ul>
+		</div>
 
-			</li>
-			<li>
-				<a class="" href="{{ path('products_index') }}">
-					Produit
-				</a>
-			</li>
-			<li>
-				<a class="" href="">
-					Profil
-				</a>
-			</li>
-			<li id="">
-				<a href="">
-					<img src="{{ asset('')}}" alt="">
-				</a>
-			</li>
-		</ul>
+		<div id="navbar">
+			<ul class="flex">
+				<li>
+					<a href="{{ path('acceuil_index') }}">
+						<div class="icon">
+							<img class="marg" src="{{ asset('images/home.png')}}" alt="accueil">
+							<div>
+								Accueil
+							</div>
+						</div>
+					</a>
+
+				</li>
+
+				<li>
+					<a href="{{ path('products_index') }}">
+						<div class="icon">
+							<img class="marg" src="{{ asset('images/users.png')}}" alt="profil">
+							<div>
+								Profil
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<div class="icon">
+							<img class="marg" src="{{ asset('images/cart.png')}}" alt="panier">
+							<div>
+								Panier
+							</div>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
 	</nav>
 </header>
