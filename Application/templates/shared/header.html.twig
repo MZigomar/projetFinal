@@ -1,26 +1,47 @@
 <header>
 	<nav>
-		<ul>
-			<li>
-				<a class=""  
-					accueil</a>
-			
-			</li>
-			<li>
-				<a class="" href="">
-					produit
-				</a>
-			</li>
-			<li>
-				<a class="" href="">
-					profil
-			</a>
-			</li>
-			<li id="">
-				<a href="">
-					<img src="{{ asset('')}}" alt="">
-			
-			</li>
-		</ul>
+
+		<div>
+			<ul>
+				<li><a href=""><img class="img"src="{{ asset('images/logo.jpg')}}" alt="logo"></a></li>
+			</ul>
+		</div>
+
+		<div id="navbar">
+			<ul class="flex">
+				<li>
+					<a href="">
+						<div class="icon">
+							<img class="marg" src="{{ asset('images/home.png')}}" alt="logo">
+							<div>
+								accueil
+							</div>
+						</div>
+					</a>
+
+				</li>
+				
+				<li>
+					<a href="">
+						<div class="icon">
+							<img class="marg" src="{{ asset('images/users.png')}}" alt="logo">
+							<div>
+								profil
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a href="">
+						<div class="icon">
+							<img class="marg" src="{{ asset('images/cart.png')}}" alt="panier">
+							<div>
+								panier
+							</div>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
 	</nav>
 </header>
