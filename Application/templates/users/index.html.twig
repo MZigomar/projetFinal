@@ -1,20 +1,32 @@
-{% extends 'base.html.twig' %}
+{% extends 'users.html.twig' %}
 
-{% block title %}Hello UsersController!{% endblock %}
+{% block title %}Profil de
+	{{ app.user.firstname }}
+	{{ app.user.lastname }}
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+	<div class="grix xs4 container">
+		{% for message in app.flashes('message') %}
+			<div class="col-xs4">
+				<div class="p-3 my-2 rounded-1 green light-4 text-green text-dark-4">{{message}}</div>
+			</div>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/wamp64/www/Symfony/ProjetFinal/Application/src/Controller/UsersController.php'|file_link(0) }}">src/Controller/UsersController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/wamp64/www/Symfony/ProjetFinal/Application/templates/users/index.html.twig'|file_link(0) }}">templates/users/index.html.twig</a></code></li>
-    </ul>
-</div>
+		{% endfor %}
+		<div class="col-xs4">
+			<h1>Profil de
+				{{ app.user.firstname }}
+				{{ app.user.lastname }}</h1>
+		</div>
+		<div class="col-xs1">Nom :</div>
+		<div class="col-xs3">{{ app.user.lastname }}</div>
+		<div class="col-xs1">Prénom :</div>
+		<div class="col-xs3">{{ app.user.firstname }}</div>
+		<div class="col-xs1">Email :</div>
+		<div class="col-xs3">{{ app.user.email }}</div>
+		<div class="col-xs4">
+			<a href="{{ path('users_profil_modifier')}}" class="btn blue">Modifier le profil</a>
+			<a href="" class="btn blue">Modifier le mot de passe</a>
+		</div>
+	</div>
 {% endblock %}
