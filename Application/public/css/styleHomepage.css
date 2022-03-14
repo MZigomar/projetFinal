@@ -1,30 +1,25 @@
-.showcase {
-    width: 80%;
-    margin: 4rem auto 0 auto;
-    padding: 4rem 0;
-    background-color: rgb(255, 255, 255);
-    flex-wrap: wrap;
-    justify-content: space-around;
-}
-
-.item {
-    border: solid black 1px;
+.itemHome {
     text-align: center;
     max-width: 80%;
     margin: 1rem 0;
     padding: 1rem;
+    transition: 0.3s;
+}
+.itemHome:hover {
+    background-color: orangered;
 }
 
-.itemPic img {
-    max-height: 15rem;
-    width: 90%;
-    object-fit: cover;
-    border: 1px solid grey;
+.linkHome {
+    border: 2px solid orangered;
+    font-size: 30px;
+    color: white;
+    background-color: orangered;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    transition: 0.3s;
+    text-decoration: none;
 }
-
-
-@media (min-width: 768px) {
-    .item {
-        max-width: 25%;
-    }
+.linkHome:hover {
+    color: rgb(180, 48, 0);
+    background-color: white;
 }

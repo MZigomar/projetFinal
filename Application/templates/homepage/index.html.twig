@@ -4,34 +4,31 @@
 	{{ parent() }}
 	: Acceuil
 {% endblock %}
-{% block stylesheets %}
-	<link rel="stylesheet" href="{{ asset('css/styleHomepage.css') }}">
-{% endblock %}
 {% block body %}
 
 	<div class="wrap">
 
-		<h1>Bienvenue sur {{ controller_name }}</h1>
+		<h1>Bienvenue sur
+			{{ controller_name }}</h1>
 
 		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto quidem error hic sed magnam voluptates. Quam, incidunt quia ab expedita excepturi sint repudiandae unde qui possimus mollitia, consequuntur totam. Repudiandae minus a magni quibusdam quod ipsam dicta maiores dolore, consequuntur, ut quaerat commodi eos vero adipisci deleniti vitae?
 		</p>
+		<hr>
+		<h2>Nos derniers produits en stock</h2>
 
 		<div class="showcase d-flex">
-
-			{% for i in 0..8 %}
-
-				<div class="item">
-					<h3>Item
-						{{i}}</h3>
+			{% for p in product %}
+				<div class="itemHome">
 					<div class="itemPic">
-						<img src="{{ asset('images/chair.png') }}" alt="">
+						<img src="{{ asset('images/' ~ p.image ) }}" alt="{{ p.name }}">
 					</div>
-					<p>
-						Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga error dignissimos quaerat esse odit.
-					</p>
 				</div>
+
 			{% endfor %}
 		</div>
+
+		<a class="linkHome" href="{{ path('products_index') }}">Voir les stock !
+		</a>
 
 	</div>
 {% endblock %}

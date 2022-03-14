@@ -13,6 +13,10 @@
     max-width: 80%;
     margin: 1rem 0;
     padding: 1rem;
+    transition: 0.3s;
+}
+.item:hover {
+    background-color: orangered;
 }
 
 .itemPic img {

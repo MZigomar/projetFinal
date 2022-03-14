@@ -48,16 +48,15 @@ class ProductRepository extends ServiceEntityRepository
     /**
      * @return Product[]
      */
-    public function findRecentProducts(int $n): array
+    public function findRecentProducts(): array
     {
-        $entityManager = $this->getEntityManager();
-        $query = $entityManager->createQuery(
-            'SELECT p
-            FROM App\Entity\Product p
-            ORDER BY p.id DESC
-            LIMIT n'
-        )->setParameter('n', $n);
-        return $query->getResult();
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.stock > 0')
+            ->orderBy('p.id', 'DESC')
+            ->setMaxResults(3)
+            ->getQuery()
+            ->getResult()
+        ;
     }
 
     // /**
