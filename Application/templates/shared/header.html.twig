@@ -1,17 +1,15 @@
-<link rel="stylesheet" href={{ asset ('css/styleHeader.css')}} />
-
 <header>
-	<nav>
+	<nav class="d-flex" id="navbar">
 		<div>
 			<ul>
-				<li><ahref="{{ path('acceuil_index') }}"><img class="img"src="{{ asset('images/logo.jpg')}}" alt="logo"></a></li>
+				<li><ahref="{{path('acceuil_index')}}"><img class="img"src="{{ asset('images/logo.jpg')}}" alt="logo"></a></li>
 			</ul>
 		</div>
 
-		<div id="navbar">
-			<ul class="flex">
+		<div id="iconlist">
+			<ul class="d-flex">
 				<li>
-					<a href="{{ path('acceuil_index') }}">
+					<a class="link" href="{{ path('acceuil_index') }}">
 						<div class="icon">
 							<img class="marg" src="{{ asset('images/home.png')}}" alt="accueil">
 							<div>
@@ -21,9 +19,19 @@
 					</a>
 
 				</li>
+				{# LIEN DE LA BOUTIQUE #}
+				<li>
+					<a class="link" href="{{ path('products_index') }}">
+						<div class="icon">
+							<div>
+								Stock
+							</div>
+						</div>
+					</a>
+				</li>
 
 				<li>
-					<a href="{{ path('products_index') }}">
+					<a class="link" href="">
 						<div class="icon">
 							<img class="marg" src="{{ asset('images/users.png')}}" alt="profil">
 							<div>
@@ -33,7 +41,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="">
+					<a class="link" href="">
 						<div class="icon">
 							<img class="marg" src="{{ asset('images/cart.png')}}" alt="panier">
 							<div>
