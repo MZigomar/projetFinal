@@ -1,7 +1,18 @@
-body{
+body {
     margin: 0;
 }
 
-.d-flex{
+.d-flex {
     display: flex;
+}
+
+.wrap {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(245, 245, 255);
+    text-align: center;
+}
+
+h1 {
+    margin-top: 0;
+    padding: 1rem;
 }
