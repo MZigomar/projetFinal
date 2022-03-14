@@ -4,7 +4,25 @@
 	{{ parent() }}
 	: Liste des produits
 {% endblock %}
-
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset('css/styleProducts.css') }}">
+{% endblock %}
 {% block body %}
 	<h1>Liste des produits</h1>
+
+	<div class="showcase d-flex">
+		{% for p in product %}
+			<div class="item">
+				<h3>{{ p.name }}</h3>
+				<div class="itemPic">
+					<img src="{{ asset('images/' ~ p.image ) }}" 
+					alt="{{ p.name }}">
+				</div>
+				<p>
+					{{ p.description }}
+				</p>
+			</div>
+		{% endfor %}
+	</div>
+
 {% endblock %}

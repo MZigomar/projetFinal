@@ -28,6 +28,9 @@ class Product
     #[ORM\Column(type: 'integer', nullable: true)]
     private $stock;
 
+    #[ORM\Column(type: 'string', length: 20)]
+    private $slug;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -89,6 +92,18 @@ class Product
     public function setStock(?int $stock): self
     {
         $this->stock = $stock;
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }
