@@ -15,6 +15,8 @@
 		<link rel="stylesheet" href="{{ asset ('css/styleHeader.css') }}"/>
 		<link rel="stylesheet" href="{{ asset ('css/styleHomepage.css') }}"/>
 		<link rel="stylesheet" href="{{ asset ('css/styleProducts.css') }}"/>
+		<link rel="stylesheet" href="{{ asset ('css/styleInscription.css') }}"/>
+		<link rel="stylesheet" href="{{ asset ('css/styleFooter.css') }}"/>
 
 		{% block stylesheets %}
 			{{ encore_entry_link_tags('app') }}
@@ -27,7 +29,8 @@
 	<body>
 
 		{% include "shared/header.html.twig" %}
-		{% block body %}{% endblock %}
+		{# {% block body %}{% endblock %} #}
+		{% include "shared/footer.html.twig" %}
 
 	</body>
 
