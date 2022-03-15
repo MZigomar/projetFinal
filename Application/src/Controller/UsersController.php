@@ -16,3 +16,19 @@ class UsersController extends AbstractController
         ]);
     }
 }
+
+
+
+ #[Route("/user/{id}/delete", name="user_delete")]
+ #[param User $User]
+ #[return RedirectReponse]
+
+
+public function delete(User $User)
+{
+    $em = $this->getDoctrine()->getManager();
+    $em->remove($User):
+    $em->flush();
+  
+    return $this->redirectToRoute( route: "register");
+}
