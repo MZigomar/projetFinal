@@ -2,19 +2,19 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\User;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Entity\User;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class UsersController extends AbstractController
 {
 
     #[Route('/user/{id}/delete', name:'user_delete')]
-    public function delete(User $User){
-        $em = $this->getDoctrine()->getManager();
-        $em->remove($User);
-        $em->flush();
+    public function delete(User $User, EntityManagerInterface $manager){
+        $manager->remove($User);
+        $manager->flush();
       
         return $this->redirectToRoute( route: "register");
   
