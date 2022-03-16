@@ -573,6 +573,9 @@
             "./config/packages/reset_password.yaml"
         ]
     },
+    "symfonycasts/verify-email-bundle": {
+        "version": "v1.10.0"
+    },
     "theseer/tokenizer": {
         "version": "1.2.1"
     },
