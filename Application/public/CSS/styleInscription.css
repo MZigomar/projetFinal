@@ -2,8 +2,6 @@
     box-sizing: border-box;
 }
 
-
-
 .main {
     margin: 0;
     display: flex;
@@ -30,7 +28,7 @@
 
 
 .tab-body {
-    
+
     height: 30rem;
     padding: 5% 5%;
     margin-top: 0%;
@@ -55,7 +53,7 @@
     bottom: 8rem;
     transform: translate(-50%, 50%);
     width: 120px;
-    height:45px;
+    height: 45px;
     border-radius: 50px;
     background-color: #6ba1f9;
     border: none;
@@ -68,14 +66,14 @@
 
 .required {
     display: none;
-    width:0;
+    width: 0;
 }
 
 @media (max-width:992px) {
     * {
         box-sizing: border-box;
     }
-    
+
     .main {
         margin: 0;
         display: flex;
@@ -85,7 +83,7 @@
         height: 100vh;
         background-color: #7aacef;
     }
-    
+
     .container {
         position: relative;
         width: 80%;
@@ -95,10 +93,10 @@
         border-radius: 10px;
         font-size: 10px;
     }
-     
-    
+
+
     .tab-body {
-        
+
         height: 40rem;
         padding: 5% 5%;
         margin-top: 0%;
@@ -108,7 +106,7 @@
         border-radius: 30px;
         font-size: 19px;
     }
-    
+
     .row {
         display: flex;
         justify-content: space-between;
@@ -116,14 +114,14 @@
         padding: 4% 0;
         margin: 2px 0;
     }
-    
+
     .btn {
         position: absolute;
         left: 50%;
         bottom: 10rem;
         transform: translate(-50%, 50%);
         width: 120px;
-        height:45px;
+        height: 45px;
         border-radius: 50px;
         background-color: #6ba1f9;
         border: none;
@@ -131,21 +129,21 @@
         color: #fff;
         cursor: pointer;
     }
-    
-    
-    
+
+
+
     .required {
         display: none;
-        width:0;
+        width: 0;
     }
-    
+
 }
 
 @media (max-width:576px) {
     * {
         box-sizing: border-box;
     }
-    
+
     .main {
         margin: 0;
         display: flex;
@@ -154,9 +152,9 @@
         align-items: center;
         height: 90vh;
         background-color: #7aacef;
-        padding-top:3rem;
+        padding-top: 3rem;
     }
-    
+
     .container {
         position: relative;
         width: 90%;
@@ -166,10 +164,10 @@
         border-radius: 10px;
         font-size: 10px;
     }
-     
-    
+
+
     .tab-body {
-        
+
         height: 38rem;
         padding: 5% 5%;
         margin-top: 0%;
@@ -179,7 +177,7 @@
         border-radius: 30px;
         font-size: 19px;
     }
-    
+
     .row {
         display: flex;
         justify-content: space-between;
@@ -187,14 +185,14 @@
         padding: 4% 0;
         margin: 2px 0;
     }
-    
+
     .btn {
         position: absolute;
         left: 50%;
         bottom: 12rem;
         transform: translate(-50%, 50%);
         width: 120px;
-        height:45px;
+        height: 45px;
         border-radius: 50px;
         background-color: #6ba1f9;
         border: none;
@@ -202,12 +200,12 @@
         color: #fff;
         cursor: pointer;
     }
-    
-    
-    
+
+
+
     .required {
         display: none;
-        width:0;
+        width: 0;
     }
-    
+
 }

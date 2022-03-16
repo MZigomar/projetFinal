@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}Welcome!
+			{% endblock %}
+		</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/axentix@2.0.0/dist/axentix.min.css"> {% block stylesheets %}{% endblock %}
+
+		{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+		{% endblock %}
+	</head>
+	<body class="layout-sidenav">
+		<header>
+			<nav class="navbar primary">
+				<a href="" class="navbar-brand">Logo</a>
+				<div class="navbar-menu ml-auto">
+					<a class="navbar-link" href="">Accueil</a>
+					<a class="navbar-link" href="">Link 2
+					</a>
+					<a class="navbar-link" href="">Link 3</a>
+				</div>
+			</nav>
+		</header>
+
+		<div id="example-sidenav" data-ax="sidenav" class="sidenav shadow-1 sidenav-fixed white">
+			<div class="sidenav-header">
+				<img class="sidenav-logo dropshadow-1" src="your_img_path" alt="Logo"/>
+			</div>
+			<a href="#" class="sidenav-link active">Mon profil</a>
+			<a href="#" class="sidenav-link">Mes commandes</a>
+			
+		</div>
+
+		<main>
+			<!-- Code here the main content -->
+			<button data-target="example-sidenav" class="btn rounded-1 press amaranth dark-1 hide-md-up">
+				Open sidenav
+			</button>
+            {% block body %}{% endblock %}
+		</main>
+
+        
+		
+	</body>
+    <script src="https://cdn.jsdelivr.net/npm/axentix@2.0.0/dist/axentix.min.js"></script>
+</html>
