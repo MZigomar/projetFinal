@@ -15,13 +15,16 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class UsersController extends AbstractController 
 {
-    #[Route('/users', name: 'users')]
+    #[Route('/profil', name: 'profil_')]
     public function index(): Response
     {
+       
         return $this->render('users/index.html.twig');
+        
+        
     }
 
-    #[Route('/users/profil/modifier', name: 'users_profil_modifier')]
+    #[Route('/profil/modifier', name: 'users_profil_modifier')]
     public function editProfile(Request $request, EntityManagerInterface $manager)
     {
         $user = $this->getUser();
@@ -35,7 +38,7 @@ class UsersController extends AbstractController
             $manager->flush();
 
             $this->addFlash('message', 'Profil mis à jour');
-            return $this->redirectToRoute('users');
+            return $this->redirectToRoute('profil_');
         }
         return $this->render('users/editProfile.html.twig', [
             'form' => $form->createView(),
@@ -43,7 +46,7 @@ class UsersController extends AbstractController
     }
 
 
-    #[Route('/users/pass/modifier', name: 'users_pass_modifier')]
+    #[Route('/profil/pass/modifier', name: 'users_pass_modifier')]
     public function editPass(Request $request, UserPasswordHasherInterface $hasher, EntityManagerInterface $manager)
     {
         if($request->isMethod('POST')){
@@ -57,7 +60,7 @@ class UsersController extends AbstractController
                 $manager->flush();
                 $this->addFlash('message', 'Mot de passe mis à jour avec succès');
 
-                return $this->redirectToRoute('users');
+                return $this->redirectToRoute('profil_');
 
             }else{
                 $this->addFlash('error', 'Les deux mots de passe ne sont pas identiques');

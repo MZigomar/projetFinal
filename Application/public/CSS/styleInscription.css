@@ -8,8 +8,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #7aacef;
+    height: 45rem;
+    
 }
 
 .container {
@@ -17,6 +17,7 @@
     width: 40%;
     height: 40rem;
     background-color: #f0f6fb;
+    border: 3px solid black;
     padding: 3%;
     border-radius: 10px;
     font-size: 10px;
@@ -61,6 +62,9 @@
     color: #fff;
     cursor: pointer;
 }
+
+
+
 
 
 
