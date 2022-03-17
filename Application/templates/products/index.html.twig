@@ -8,23 +8,25 @@
 	<link rel="stylesheet" href="{{ asset('css/styleProducts.css') }}">
 {% endblock %}
 {% block body %}
-<div class="wrap">
-	<h1>Liste des produits</h1>
-<hr>
-	<div class="showcase d-flex">
-		{% for p in product %}
-			<div class="item">
-				<h3>{{ p.name }}</h3>
-				<div class="itemPic">
-					<img src="{{ asset('images/chair.png') }}" 
-					alt="{{ p.name }}">
-				</div>
-				<p>
-					{{ p.description }}
+	<div class="wrap">
+		<h1>Liste des produits</h1>
+		<hr>
+		<div class="showcase d-flex">
+			{% for p in product %}
+				<div class="item">
+					<a class="linkProduct" href="{{ path('products_details', {'slug': p.slug}) }}">
+
+						<h3>{{ p.name }}</h3>
+						<div class="itemPic">
+							<img src="{{ asset('images/chair.png') }}" alt="{{ p.name }}">
+						</div>
+					</a>
+					<p>
+						{% set splitDescription = p.description|split('.', 2) %}
+						{{ attribute(splitDescription, 0) }}...
+					</p>
 				</p>
 			</div>
 		{% endfor %}
 	</div>
-</div>
-
-{% endblock %}
+</div>{% endblock %}
