@@ -1,6 +1,6 @@
-/* * {
+* {
     box-sizing: border-box;
-} */
+}
 
 .main {
     margin: 0;
@@ -48,7 +48,7 @@
     margin: 2px 0;
 }
 
-.btn {
+.btn-inscription {
     position: absolute;
     left: 50%;
     bottom: 8rem;
@@ -68,7 +68,7 @@
 
 
 
-.required {
+.required-inscription {
     display: none;
     width: 0;
 }
@@ -119,7 +119,7 @@
         margin: 2px 0;
     }
 
-    .btn {
+    .btn-inscription {
         position: absolute;
         left: 50%;
         bottom: 10rem;
@@ -136,7 +136,7 @@
 
 
 
-    .required {
+    .required-inscription {
         display: none;
         width: 0;
     }
@@ -190,7 +190,7 @@
         margin: 2px 0;
     }
 
-    .btn {
+    .btn-inscription {
         position: absolute;
         left: 50%;
         bottom: 12rem;
@@ -207,7 +207,7 @@
 
 
 
-    .required {
+    .required-inscription {
         display: none;
         width: 0;
     }
