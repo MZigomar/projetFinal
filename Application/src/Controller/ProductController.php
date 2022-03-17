@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Images;
 use App\Entity\Product;
 use App\Form\ProductType;
 use App\Repository\ProductRepository;
@@ -29,6 +30,19 @@ class ProductController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $image = $form->get('image')->getData();
+            foreach($image as $images){
+                $fichier = md5(uniqid()) . '.' . $images->guessExtension();
+                $images->move(
+                    $this->getParameter('images_list'),
+                    $fichier
+                );
+                $img = new Images();
+                $img->setName($fichier);
+                $product->addImage($img);
+            }
+
+
             $productRepository->add($product);
             return $this->redirectToRoute('app_product_index', [], Response::HTTP_SEE_OTHER);
         }
