@@ -8,20 +8,19 @@
         <h1>Les produits</h1>
     </div>
 
-    <div class="row">
+    <div>
         {% for product in products %}
-            <div class="col-4 mt-4">
-                <div class="border border-dark rounded p-2 clearfix">
+            <div>
+                <div>
                     <h2>
                         {{ product.title }}
                         -
                         {{ product.price }}
                         €
                     </h2>
-                    <img class="img-fluid rounded" src="{{ product.image }}" alt="Image de {{ product.title }}">
+                    <img src="{{ product.image }}" alt="Image de {{ product.title }}">
                     <hr>
-                    <a href="{{ path('cart_add', 'id': product.id)}}" class="btn btn-success float-right">
-                        <i class="fas fa-shopping-cart mr-1"></i>
+                    <a href="{{ path('cart_add', {'id': product.id})}}">
                         Ajouter
                     </a>
                 </div>
