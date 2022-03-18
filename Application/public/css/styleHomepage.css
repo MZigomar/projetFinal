@@ -1,0 +1,25 @@
+.itemHome {
+    text-align: center;
+    max-width: 80%;
+    margin: 1rem 0;
+    padding: 1rem;
+    transition: 0.3s;
+}
+.itemHome:hover {
+    background-color: orangered;
+}
+
+.linkHome {
+    border: 2px solid orangered;
+    font-size: 30px;
+    color: white;
+    background-color: orangered;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    transition: 0.3s;
+    text-decoration: none;
+}
+.linkHome:hover {
+    color: rgb(180, 48, 0);
+    background-color: white;
+}

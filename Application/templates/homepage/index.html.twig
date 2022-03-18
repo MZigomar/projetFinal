@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ parent() }}
+	: Acceuil
+{% endblock %}
+{% block body %}
+
+	<div class="wrap">
+
+		<h1>Bienvenue sur
+			{{ controller_name }}</h1>
+
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto quidem error hic sed magnam voluptates. Quam, incidunt quia ab expedita excepturi sint repudiandae unde qui possimus mollitia, consequuntur totam. Repudiandae minus a magni quibusdam quod ipsam dicta maiores dolore, consequuntur, ut quaerat commodi eos vero adipisci deleniti vitae?
+		</p>
+		<hr>
+		<h2>Nos derniers produits en stock</h2>
+
+		<div class="showcase d-flex">
+			{% for p in product %}
+				<div class="itemHome">
+					<div class="itemPic">
+						<img src="{{ asset('images/chair.png') }}" alt="{{ p.name }}">
+					</div>
+				</div>
+
+			{% endfor %}
+		</div>
+
+		<a class="linkHome" href="{{ path('products_index') }}">Voir les stock !
+		</a>
+
+	</div>
+{% endblock %}

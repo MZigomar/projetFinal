@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	{{ parent() }}
+	: Détails de
+	{{ product.name }}
+{% endblock %}
+
+{% block body %}
+	<div class="wrap">
+		<div class="detail">
+
+			<h1>Détails de
+				{{ product.name }}
+			</h1>
+			<p>
+				Stock :
+				{{ product.stock }}
+				- Reference :
+				{{ product.reference }}
+			</p>
+
+			<div class="detailPic">
+				<img src="{{ asset('images/chair.png') }}" alt="{{ product.name }}">
+			</div>
+
+			<p>
+				{{ product.description }}
+			</p>
+			<a href="{{ path('products_index') }}">Retour</a>
+		</div>
+	</div>
+{% endblock %}

@@ -1,0 +1,42 @@
+/*navbar*/
+#navbar {
+    justify-content: space-between;
+    list-style-type: none;
+    border-bottom: solid;
+}
+header ul {
+    list-style-type: none;
+}
+#iconlist {
+    width: 35%;
+}
+#iconlist ul {
+    justify-content: space-around;
+    padding: 0px;
+    height: 32px;
+    margin-top: 54.5px;
+    margin-bottom: 54.5px;
+}
+.link {
+    text-decoration: none;
+    color: black;
+
+}
+.marg {
+    margin-left: 13.5px;
+    margin-right: 13.5px;
+}
+.icon {
+    font-style: italic;
+    font-family: -apple-system, sans-serif;
+    font-size: larger;
+    height: 59px;
+    width: 70px;
+    text-decoration: none;
+    color: black;
+}
+/*image*/
+.img {
+    width: 210px;
+    height: 105.25px;
+}

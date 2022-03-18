@@ -2,14 +2,14 @@
     box-sizing: border-box;
 }
 
-body {
+.main {
     margin: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #7aacef;
+    height: 45rem;
+    
 }
 
 .container {
@@ -17,6 +17,7 @@ body {
     width: 40%;
     height: 40rem;
     background-color: #f0f6fb;
+    border: 3px solid black;
     padding: 3%;
     border-radius: 10px;
     font-size: 10px;
@@ -28,7 +29,7 @@ body {
 
 
 .tab-body {
-    
+
     height: 30rem;
     padding: 5% 5%;
     margin-top: 0%;
@@ -47,13 +48,13 @@ body {
     margin: 2px 0;
 }
 
-.btn {
+.btn-inscription {
     position: absolute;
     left: 50%;
     bottom: 8rem;
     transform: translate(-50%, 50%);
     width: 120px;
-    height:45px;
+    height: 45px;
     border-radius: 50px;
     background-color: #6ba1f9;
     border: none;
@@ -64,26 +65,26 @@ body {
 
 
 
-.required {
-    display: none;
-    width:0;
-}
+
+
+
+
 
 @media (max-width:992px) {
     * {
         box-sizing: border-box;
     }
-    
-    body {
+
+    .main {
         margin: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         height: 100vh;
-        background-color: #7aacef;
+        
     }
-    
+
     .container {
         position: relative;
         width: 80%;
@@ -93,10 +94,10 @@ body {
         border-radius: 10px;
         font-size: 10px;
     }
-     
-    
+
+
     .tab-body {
-        
+
         height: 40rem;
         padding: 5% 5%;
         margin-top: 0%;
@@ -106,7 +107,7 @@ body {
         border-radius: 30px;
         font-size: 19px;
     }
-    
+
     .row {
         display: flex;
         justify-content: space-between;
@@ -114,14 +115,14 @@ body {
         padding: 4% 0;
         margin: 2px 0;
     }
-    
-    .btn {
+
+    .btn-inscription {
         position: absolute;
         left: 50%;
         bottom: 10rem;
         transform: translate(-50%, 50%);
         width: 120px;
-        height:45px;
+        height: 45px;
         border-radius: 50px;
         background-color: #6ba1f9;
         border: none;
@@ -129,46 +130,44 @@ body {
         color: #fff;
         cursor: pointer;
     }
+
+
+
     
-    
-    
-    .required {
-        display: none;
-        width:0;
-    }
-    
+
 }
 
 @media (max-width:576px) {
     * {
         box-sizing: border-box;
     }
-    
-    body {
+
+    .main {
         margin: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 90vh;
-        background-color: #7aacef;
-        padding-top:3rem;
+        height: 70%;
+        
+        padding-top: 5%;
+        padding-bottom: 5%;
     }
-    
+
     .container {
         position: relative;
         width: 90%;
-        height: 50rem;
+        height: 30rem;
         background-color: #f0f6fb;
         padding: 3%;
         border-radius: 10px;
         font-size: 10px;
     }
-     
-    
+
+
     .tab-body {
-        
-        height: 38rem;
+
+        height: 80%;
         padding: 5% 5%;
         margin-top: 0%;
         background-color: #fff;
@@ -177,22 +176,22 @@ body {
         border-radius: 30px;
         font-size: 19px;
     }
-    
+
     .row {
         display: flex;
         justify-content: space-between;
         border-bottom: 1px solid rgb(233, 225, 225);
-        padding: 4% 0;
+        padding: 0.5% 0;
         margin: 2px 0;
     }
-    
-    .btn {
+
+    .btn-inscription {
         position: absolute;
         left: 50%;
-        bottom: 12rem;
+        bottom: 15%;
         transform: translate(-50%, 50%);
         width: 120px;
-        height:45px;
+        height: 45px;
         border-radius: 50px;
         background-color: #6ba1f9;
         border: none;
@@ -200,12 +199,8 @@ body {
         color: #fff;
         cursor: pointer;
     }
-    
-    
-    
-    .required {
-        display: none;
-        width:0;
-    }
-    
+
+
+
+
 }

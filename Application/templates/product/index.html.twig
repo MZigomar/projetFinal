@@ -1,31 +1,42 @@
 {% extends 'base.html.twig' %}
-
-{% block title %}Les produits
-{% endblock %}
+{% block title %}Product index{% endblock %}
 
 {% block body %}
-    <div class="bg-light p-3">
-        <h1>Les produits</h1>
-    </div>
+    <h1>Product index</h1>
 
-    <div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Reference</th>
+                <th>Description</th>
+                <th>Stock</th>
+                <th>Slug</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
         {% for product in products %}
-            <div>
-                <div>
-                    <h2>
-                        {{ product.title }}
-                        -
-                        {{ product.price }}
-                        €
-                    </h2>
-                    <img src="{{ product.image }}" alt="Image de {{ product.title }}">
-                    <hr>
-                    <a href="{{ path('cart_add', {'id': product.id})}}">
-                        Ajouter
-                    </a>
-                </div>
-
-            </div>
+            <tr>
+                <td>{{ product.id }}</td>
+                <td>{{ product.name }}</td>
+                <td>{{ product.reference }}</td>
+                <td>{{ product.description }}</td>
+                <td>{{ product.stock }}</td>
+                <td>{{ product.slug }}</td>
+                <td>
+                    <a href="{{ path('app_product_show', {'id': product.id}) }}">show</a>
+                    <a href="{{ path('app_product_edit', {'id': product.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
         {% endfor %}
-    </div>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_product_new') }}">Create new</a>
 {% endblock %}

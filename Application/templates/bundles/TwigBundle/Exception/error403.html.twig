@@ -1,0 +1,12 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Accès interdit
+{% endblock %}
+
+{% block body %}
+	<div class="wrap">
+		<h1>Erreur #{{ status_code }}</h1>
+        <h2>Oh non : Accès interdit.</h2>
+		<p>Pas de panique. Reprennez votre navigation via le menu !</p>
+	</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification du profil de
+	{{ app.user.firstname }}
+	{{ app.user.lastname }}
+{% endblock %}
+
+{% block body %}
+	<div class="main">
+		<div class=" container">
+			<h1>Modification du profil de
+				{{ app.user.firstname }}
+				{{ app.user.lastname }}</h1>
+			<div class="tab-body">
+				{{ form_start(form)}}
+				<div class="row">
+
+					<label for="Prénom">Prénom</label>
+					{{ form(form.firstname)}}
+				</div>
+				<div class="row">
+				<label for="Nom">Nom</label>
+						{{ form(form.lastname)}}
+				</div>
+				
+				{{ form_end(form)}}
+						
+			</div>
+
+		</div>
+	</div>
+{% endblock %}
