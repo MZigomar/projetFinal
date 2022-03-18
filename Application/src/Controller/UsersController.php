@@ -54,7 +54,7 @@ class UsersController extends AbstractController
             
             
 
-            //On vérifie si les 2 mots de passe sont identiques 
+            //On vérifie si les 2 mots de passe sont identiques
             if($request->request->get('pass') == $request->request->get('pass2')){
                 $user->setPassword($hasher->hashPassword($user, $request->request->get('pass')));
                 $manager->flush();
