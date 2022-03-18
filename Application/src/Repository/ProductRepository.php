@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\Product;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\Mapping\OrderBy;
 use Doctrine\ORM\OptimisticLockException;
 use Doctrine\ORM\ORMException;
 use Doctrine\Persistence\ManagerRegistry;
@@ -55,10 +56,19 @@ class ProductRepository extends ServiceEntityRepository
             ->orderBy('p.id', 'DESC')
             ->setMaxResults(3)
             ->getQuery()
-            ->getResult()
-        ;
+            ->getResult();
     }
 
+    public function findAllWithImages(): array
+    {
+        $queryBuilder = $this->createQueryBuilder('p')
+            ->leftJoin('p.images', 'i')
+            // ->where('p.id = i.id')
+            ->andWhere('p.stock > 0')
+            ->orderBy('p.id', 'DESC');
+            dd($queryBuilder->getQuery()->getResult());
+        return $this->findAll();
+    }
     // /**
     //  * @return Product[] Returns an array of Product objects
     //  */

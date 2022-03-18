@@ -7,6 +7,7 @@ use App\Entity\Product;
 use App\Form\ProductType;
 use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -31,7 +32,7 @@ class ProductController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $image = $form->get('image')->getData();
-            foreach($image as $images){
+            foreach ($image as $images) {
                 $fichier = md5(uniqid()) . '.' . $images->guessExtension();
                 $images->move(
                     $this->getParameter('images_list'),
@@ -81,10 +82,27 @@ class ProductController extends AbstractController
     #[Route('/{id}', name: 'app_product_delete', methods: ['POST'])]
     public function delete(Request $request, Product $product, ProductRepository $productRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$product->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete' . $product->getId(), $request->request->get('_token'))) {
             $productRepository->remove($product);
         }
 
         return $this->redirectToRoute('app_product_index', [], Response::HTTP_SEE_OTHER);
+    }
+
+    #[Route('/delete/image/{id}', name: 'app_product_image_delete', methods: ["DELETE"])]
+    public function deleteImage(Images $image, Request $request)
+    {
+        $data = json_decode($request->getContent(),  true);
+        if ($this->isCsrfTokenValid('delete' . $image->getId(), $data['_token'])) {
+            unlink($this->getParameter('image_directory') . '/' . $image->getName());
+
+            $em = $this->doctrine->getManager();
+            $em->remove($image);
+            $em->flush();
+
+            return new JsonResponse(['success' => 1]);
+        } else {
+            return new JsonResponse(['success' => 'Token invalide'], 400);
+        }
     }
 }
