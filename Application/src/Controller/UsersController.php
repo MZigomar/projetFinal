@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 
+
 use App\Form\EditProfileType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -10,6 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
+
 
 
 
@@ -45,7 +47,18 @@ class UsersController extends AbstractController
         ]);
     }
 
+    #[Route('/user/{id}/delete', name:'user_delete')]
+    public function delete(User $User, EntityManagerInterface $manager){
+        $manager->remove($User);
+        $manager->flush();
+      
+        return $this->redirectToRoute( route: "register");
+  
+  
+  
+  }
 
+    #[Route('/users', name: 'users')]
     #[Route('/profil/pass/modifier', name: 'users_pass_modifier')]
     public function editPass(Request $request, UserPasswordHasherInterface $hasher, EntityManagerInterface $manager)
     {
@@ -70,3 +83,4 @@ class UsersController extends AbstractController
         return $this->render('users/editPass.html.twig');
     }
 }
+
