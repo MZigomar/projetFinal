@@ -5,7 +5,7 @@
 	<h2>Images</h2>
 	{% for i in product.images %}
 		<div>
-			<img src="{{ asset('/upload/' ~ i.name) }}" alt="Image" width="15rem">
+			<img src="{{ asset('/uploads/' ~ i.name) }}" alt="Image" width="300rem">
 			<a href="{{ path('app_product_image_delete', {id: i.id}) }}" data-delete data-token="{{ csrf_token('delete' ~ i.id) }}">Supprimer</a>
 		</div>
 	{% endfor %}

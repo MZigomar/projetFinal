@@ -6,6 +6,7 @@ use App\Entity\Images;
 use App\Entity\Product;
 use App\Form\ProductType;
 use App\Repository\ProductRepository;
+use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -90,13 +91,14 @@ class ProductController extends AbstractController
     }
 
     #[Route('/delete/image/{id}', name: 'app_product_image_delete', methods: ["DELETE"])]
-    public function deleteImage(Images $image, Request $request)
+    public function deleteImage(Images $image, Request $request, ManagerRegistry $doctrine)
     {
         $data = json_decode($request->getContent(),  true);
-        if ($this->isCsrfTokenValid('delete' . $image->getId(), $data['_token'])) {
-            unlink($this->getParameter('image_directory') . '/' . $image->getName());
 
-            $em = $this->doctrine->getManager();
+        if ($this->isCsrfTokenValid('delete' . $image->getId(), $data['_token'])) {
+            unlink($this->getParameter('images_list') . '/' . $image->getName());
+
+            $em = $doctrine->getManager();
             $em->remove($image);
             $em->flush();
 
