@@ -7,6 +7,9 @@ body {
 .d-flex {
     display: flex;
 }
+.d-none {
+    display: none;
+}
 
 .wrap {
     font-family: Verdana, Geneva, Tahoma, sans-serif;

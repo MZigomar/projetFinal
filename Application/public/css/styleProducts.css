@@ -33,6 +33,27 @@
     border: 1px solid grey;
 }
 
+.carou{
+    justify-content: center;
+}
+#prev, #next{
+    position: relative;
+    cursor: pointer;
+    font-size: 22px;
+    font-weight: bold;
+    transition: 0.2s;
+    padding: 0 0.5rem;
+    padding-top: 10%;
+}
+
+#prev:hover, #next:hover{
+    color: orangered;
+    background-color: rgba(128, 128, 128, 0.2);
+}
+#prev:active, #next:active{
+    color: rgb(138, 37, 0);
+    background-color: rgba(128, 128, 128, 0.2);
+}
 @media (min-width: 768px) {
     .item {
         max-width: 25%;

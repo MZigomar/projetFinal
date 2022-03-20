@@ -4,9 +4,6 @@
 	{{ parent() }}
 	: Liste des produits
 {% endblock %}
-{% block stylesheets %}
-	<link rel="stylesheet" href="{{ asset('css/styleProducts.css') }}">
-{% endblock %}
 {% block body %}
 	<div class="wrap">
 		<h1>Liste des produits</h1>
@@ -17,9 +14,19 @@
 					<a class="linkProduct" href="{{ path('products_details', {'slug': p.slug}) }}">
 
 						<h3>{{ p.name }}</h3>
-						<div class="itemPic">
-							<img src="{{ asset('images/chair.png') }}" alt="{{ p.name }}">
-						</div>
+						{% set x = 0 %}
+						{% for i in p.images %}
+							{% if x <= 0 %}
+								<div class="itemPic">
+									<img src="{{ asset('/uploads/' ~ i.name) }}" alt="Photo de l'article">
+								</div>
+							{% else %}
+								<div class="itemPic d-none">
+									<img src="{{ asset('/uploads/' ~ i.name) }}" alt="Photo de l'article">
+								</div>
+							{% endif %}
+							{% set x = x + 1 %}
+						{% endfor %}
 					</a>
 					<p>
 						{% set splitDescription = p.description|split('.', 2) %}

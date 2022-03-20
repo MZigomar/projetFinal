@@ -18,12 +18,23 @@
 
 		<div class="showcase d-flex">
 			{% for p in product %}
-				<div class="itemHome">
-					<div class="itemPic">
-						<img src="{{ asset('images/chair.png') }}" alt="{{ p.name }}">
-					</div>
-				</div>
+				<a class="itemHome" href="{{ path('products_details', {'slug': p.slug}) }}">
 
+					<h3>{{ p.name }}</h3>
+					{% set x = 0 %}
+					{% for i in p.images %}
+						{% if x <= 0 %}
+							<div class="itemPic">
+								<img src="{{ asset('/uploads/' ~ i.name) }}" alt="Photo de l'article">
+							</div>
+						{% else %}
+							<div class="itemPic d-none">
+								<img src="{{ asset('/uploads/' ~ i.name) }}" alt="Photo de l'article">
+							</div>
+						{% endif %}
+						{% set x = x + 1 %}
+					{% endfor %}
+				</a>
 			{% endfor %}
 		</div>
 

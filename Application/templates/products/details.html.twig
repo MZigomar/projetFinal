@@ -20,8 +20,26 @@
 				{{ product.reference }}
 			</p>
 
-			<div class="detailPic">
-				<img src="{{ asset('images/chair.png') }}" alt="{{ product.name }}">
+			<div class="d-flex carou">
+				<div id="prev">
+					<p>&#10094;</p>
+				</div>
+				{% set x = 0 %}
+				{% for i in product.images %}
+					{% if x <= 0 %}
+						<div class="detailPic">
+							<img src="{{ asset('/uploads/' ~ i.name) }}" alt="{{ product.name }}">
+						</div>
+					{% else %}
+						<div class="detailPic d-none">
+							<img src="{{ asset('/uploads/' ~ i.name) }}" alt="{{ product.name }}">
+						</div>
+					{% endif %}
+					{% set x = x + 1 %}
+				{% endfor %}
+				<div id="next">
+					<p>&#10095;</p>
+				</div>
 			</div>
 
 			<p>
@@ -30,4 +48,7 @@
 			<a href="{{ path('products_index') }}">Retour</a>
 		</div>
 	</div>
+{% endblock %}
+{% block javascripts %}
+	<script src="{{ asset('js/details.js') }}"></script>
 {% endblock %}

@@ -66,7 +66,6 @@ class ProductRepository extends ServiceEntityRepository
             // ->where('p.id = i.id')
             ->andWhere('p.stock > 0')
             ->orderBy('p.id', 'DESC');
-            dd($queryBuilder->getQuery()->getResult());
         return $this->findAll();
     }
     // /**
