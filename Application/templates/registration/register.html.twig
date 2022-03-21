@@ -27,15 +27,11 @@
 				</div>
 				<div class="row">
 					<label for="Mot de passe">Mot de passe</label>
-					{{ form_row(registrationForm.plainPassword.first, {
-            label: 'Password'
-        }) }}
+					{{ form_row(registrationForm.plainPassword.first) }}
 				</div>
 				<div class="row">
 					<label for="">Confirmer Mot de passe</label>
-					{{ form_row(registrationForm.plainPassword.second, {
-            label: 'Password'
-        }) }}
+					{{ form_row(registrationForm.plainPassword.second) }}
 
 
 				</div>
@@ -43,12 +39,13 @@
 					<label for="J'accepte les termes">J'accepte les termes</label>
 					{{ form_row(registrationForm.agreeTerms) }}
 				</div>
-
 				<div class="bouton">
-					<button type="submit" class="btn">S'inscrire</button>
+					<button type="submit" class="btn-inscription">S'inscrire</button>
 					{{ form_end(registrationForm) }}
 				</div>
-
+				<p>
+					<a href="{{ path('app_login')}}">Se connecter</a>
+				</p>
 			</div>
 		</div>
 	</div>

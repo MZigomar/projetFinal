@@ -1,4 +1,4 @@
-{% extends 'users.html.twig' %}
+{% extends 'base.html.twig' %}
 
 {% block title %}Profil de
 	{{ app.user.firstname }}
@@ -6,27 +6,29 @@
 {% endblock %}
 
 {% block body %}
-	<div class="grix xs4 container">
-		{% for message in app.flashes('message') %}
-			<div class="col-xs4">
-				<div class="p-3 my-2 rounded-1 green light-4 text-green text-dark-4">{{message}}</div>
-			</div>
+	<div class="main">
+		<div class=" container">
+			{% for message in app.flashes('message') %}
+				<div class="">
+					<div class="">{{message}}</div>
+				</div>
 
-		{% endfor %}
-		<div class="col-xs4">
-			<h1>Profil de
-				{{ app.user.firstname }}
-				{{ app.user.lastname }}</h1>
-		</div>
-		<div class="col-xs1">Nom :</div>
-		<div class="col-xs3">{{ app.user.lastname }}</div>
-		<div class="col-xs1">Prénom :</div>
-		<div class="col-xs3">{{ app.user.firstname }}</div>
-		<div class="col-xs1">Email :</div>
-		<div class="col-xs3">{{ app.user.email }}</div>
-		<div class="col-xs4">
-			<a href="{{ path('users_profil_modifier')}}" class="btn blue">Modifier le profil</a>
-			<a href="{{ path('users_pass_modifier')}}" class="btn blue">Modifier le mot de passe</a>
+			{% endfor %}
+			<div class="">
+				<h1>Profil de
+					{{ app.user.firstname }}
+					{{ app.user.lastname }}</h1>
+			</div>
+			<div class="tab-body">
+				<div class="row">Nom : {{ app.user.lastname }}</div>
+				<div class="row">Prénom : {{ app.user.firstname }}</div>
+				<div class="row">Email : {{ app.user.email }}</div>
+				<div class="row">
+					<a href="{{ path('users_profil_modifier')}}" class="btnProfil">Modifier le profil</a>
+					<a href="{{ path('users_pass_modifier')}}" class="btnPass">Modifier le mot de passe</a>
+				</div>
+				<a href="{{ path('app_logout')}}">Se deconnecter</a>
+			</div>
 		</div>
 	</div>
 {% endblock %}
