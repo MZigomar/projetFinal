@@ -1,4 +1,15 @@
 {{ form_start(form) }}
     {{ form_widget(form) }}
+    {% if app.request.attributes.get('_route') == 'app_product_edit' %}
+    <h2>images</h2>    
+    {% for images in product.images %}
+        <div>
+        <img src="{{ asset('/uploads/' ~ images.name)}}" alt="image" >
+        <a href="{{ path('product_delete_image', {id: images.id}) }}"
+        data-delete date-token="{{ csrf_token('delete' ~ images.id) }}">
+        supprimer</a>
+        </div>
+    {% endfor %}
+    {% endif %}
     <button class="btn">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}

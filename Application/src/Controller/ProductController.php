@@ -7,6 +7,7 @@ use App\Entity\Product;
 use App\Form\ProductType;
 use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -86,5 +87,24 @@ class ProductController extends AbstractController
         }
 
         return $this->redirectToRoute('app_product_index', [], Response::HTTP_SEE_OTHER);
+    }
+
+    #[Route('/supprime/image/{id}', name: 'product_delete_image', methods: ['DELETE'])]
+    public function deleteImage(Images $image, Request $request){
+        $data = json_decode($request->getContent(), true);
+        
+        if($this->isCsrfTokenValid('delete'.$image->getId(), $data['_token'])){
+            $nom = $image->getName();
+            unlink($this->getParameter('image_list').'/'.$nom);
+
+            $em = $this->doctrine->getManager();
+            $em->remove($image);
+            $em->flush();
+
+            return new JsonResponse(['success' => 1]);
+        }else{
+            return new JsonResponse(['error' => 'Token Invalide'], 400);
+            
+        }
     }
 }
