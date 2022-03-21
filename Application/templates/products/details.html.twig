@@ -13,6 +13,7 @@
 			<h1>Détails de
 				{{ product.name }}
 			</h1>
+			<a href="{{ path('cart_add', {'id': product.id }) }}">Ajouter au panier</a>
 			<p>
 				Stock :
 				{{ product.stock }}
