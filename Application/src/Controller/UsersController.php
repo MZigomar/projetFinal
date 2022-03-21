@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 
+use App\Entity\User;
 use App\Form\EditProfileType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -13,14 +14,26 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 
 
+
+
 class UsersController extends AbstractController 
 {
-    #[Route('/profil', name: 'profil_')]
+
+    // #[Route('/profil', name: 'profil_')]
+
+    #[Route('/user/{id}/delete', name:'user_delete')]
+    public function delete(User $User, EntityManagerInterface $manager){
+        $manager->remove($User);
+        $manager->flush();
+      
+        return $this->redirectToRoute( route: "register");
+  }
+
+    #[Route('/users', name: 'users')]
     public function index(): Response
     {
        
         return $this->render('users/index.html.twig');
-        
         
     }
 
