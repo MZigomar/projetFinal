@@ -99,12 +99,13 @@ class ProductController extends AbstractController
             unlink($this->getParameter('images_list') . '/' . $image->getName());
 
             $em = $doctrine->getManager();
+
             $em->remove($image);
             $em->flush();
 
             return new JsonResponse(['success' => 1]);
         } else {
-            return new JsonResponse(['success' => 'Token invalide'], 400);
+            return new JsonResponse(['error' => 'Token Invalide'], 400);
         }
     }
 }

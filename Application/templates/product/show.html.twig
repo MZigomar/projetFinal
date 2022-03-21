@@ -32,6 +32,11 @@
                 <td>{{ product.slug }}</td>
             </tr>
         </tbody>
+        {% for images in product.images %}
+        <div class="dflex">
+        <img src="{{ asset('/uploads/' ~ images.name)}}" alt="image" >
+        </div>
+        {% endfor %}
     </table>
 
     <a href="{{ path('app_product_index') }}">back to list</a>
