@@ -1,5 +1,6 @@
 {
     "require": {
-        "symfony/orm-pack": "^2.2"
+        "symfony/orm-pack": "^2.2",
+        "symfonycasts/reset-password-bundle": "^1.13"
     }
 }
