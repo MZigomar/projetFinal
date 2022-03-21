@@ -27,7 +27,10 @@
 					<a href="{{ path('users_profil_modifier')}}" class="btnProfil">Modifier le profil</a>
 					<a href="{{ path('users_pass_modifier')}}" class="btnPass">Modifier le mot de passe</a>
 				</div>
-				<a href="{{ path('app_logout')}}">Se deconnecter</a>
+				<div class="row"><a href="{{ path('app_logout')}}">Se deconnecter</a></div>
+				{# <div class="row"><a href="{{ path('user_delete', {'id': user.id})}}">Supprimer mon compte</a></div> #}
+				
+				
 			</div>
 		</div>
 	</div>
