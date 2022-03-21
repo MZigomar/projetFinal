@@ -19,22 +19,20 @@ use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 class UsersController extends AbstractController 
 {
 
-    // #[Route('/profil', name: 'profil_')]
-
+    
     #[Route('/user/{id}/delete', name:'user_delete')]
     public function delete(User $User, EntityManagerInterface $manager){
         $manager->remove($User);
         $manager->flush();
-      
+        
         return $this->redirectToRoute( route: "register");
-  }
-
-    #[Route('/users', name: 'users')]
+    }
+    
+    // #[Route('/users', name: 'users')]
+    #[Route('/profil', name: 'profil_')]
     public function index(): Response
     {
-       
         return $this->render('users/index.html.twig');
-        
     }
 
     #[Route('/profil/modifier', name: 'users_profil_modifier')]
