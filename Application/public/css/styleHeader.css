@@ -1,42 +1,73 @@
 /*navbar*/
 #navbar {
-    justify-content: space-between;
-    list-style-type: none;
-    border-bottom: solid;
+  justify-content: space-between;
+  list-style-type: none;
+  border-bottom: solid;
 }
 header ul {
-    list-style-type: none;
+  list-style-type: none;
 }
-#iconlist {
-    width: 35%;
-}
+
 #iconlist ul {
-    justify-content: space-around;
-    padding: 0px;
-    height: 32px;
-    margin-top: 54.5px;
-    margin-bottom: 54.5px;
+  justify-content: space-around;
+  padding: 0px;
 }
 .link {
-    text-decoration: none;
-    color: black;
-
+  text-decoration: none;
+  color: black;
 }
 .marg {
-    margin-left: 13.5px;
-    margin-right: 13.5px;
+  margin-left: 13.5px;
+  margin-right: 13.5px;
 }
 .icon {
-    font-style: italic;
-    font-family: -apple-system, sans-serif;
-    font-size: larger;
-    height: 59px;
-    width: 70px;
-    text-decoration: none;
-    color: black;
+  font-style: italic;
+  font-family: -apple-system, sans-serif;
+  font-size: larger;
+  height: 59px;
+  width: 70px;
+  text-decoration: none;
+  color: black;
+}
+
+.gostock {
+  font-style: italic;
+  font-family: -apple-system, sans-serif;
+  font-size: larger;
+  text-decoration: none;
+  color: black;
+  height: 21px;
+}
+
+#form {
+  display: flex;
+}
+
+.listArticle {
+  width: 233px;
+  margin: 0px;
+  padding: 0px;
+}
+
+.articleSearch {
+  height: 50px;
+}
+
+.headercol {
+  flex-direction: column;
+  padding: ri;
 }
 /*image*/
 .img {
-    width: 210px;
-    height: 105.25px;
+  width: 210px;
+  height: 105.25px;
+}
+@media (max-width: 768px) {
+  #navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+  ul {
+    padding: 0px;
+  }
 }
